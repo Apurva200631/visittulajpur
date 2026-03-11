@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Navratri Festival Countdown</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.countdown{
+text-align:center;
+font-size:40px;
+margin-top:50px;
+color:#8b0000;
+}
+
+</style>
+
+<script>
+
+function updateCountdown(){
+
+let festival = new Date("Oct 15, 2026 00:00:00").getTime();
+let now = new Date().getTime();
+
+let gap = festival - now;
+
+let days = Math.floor(gap/(1000*60*60*24));
+let hours = Math.floor((gap%(1000*60*60*24))/(1000*60*60));
+let minutes = Math.floor((gap%(1000*60*60))/(1000*60));
+
+document.getElementById("timer").innerHTML =
+days + " Days " + hours + " Hours " + minutes + " Minutes";
+
+}
+
+setInterval(updateCountdown,1000);
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Navratri Festival Countdown</h1>
+</header>
+
+<div class="container">
+
+<p style="text-align:center;">
+Countdown to the next Navratri Festival at Tulja Bhavani Temple.
+</p>
+
+<div class="countdown" id="timer"></div>
+
+</div>
+
+<footer>
+Navratri Festival Information
+</footer>
+
+</body>
+
+</html>
